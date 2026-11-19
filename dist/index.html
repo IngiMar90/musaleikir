@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#edf7f5">
+  <meta name="description" content="Einfaldir músarleikir á íslensku. Æfðu að færa músina, smella og draga á þínum hraða.">
+  <title>Músaleikir · Leikum og lærum</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+ <header class="topbar">
+  <button class="brand" id="home" aria-label="Músaleikir, forsíða"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 40 44"><rect x="9" y="5" width="23" height="34" rx="12" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M20.5 5v13M10 20h21" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M20.5 1v4" stroke="currentColor" stroke-width="2.8"/></svg></span><span>Músaleikir<span class="brand-sub">Leikum og lærum</span></span></button>
+  <nav aria-label="Stýringar"><button class="utility" id="sound" aria-pressed="false">Hljóð: slökkt</button><button class="utility" id="settings" aria-label="Opna stillingar"><span aria-hidden="true">⚙</span> <span>Stillingar</span></button></nav>
+ </header>
+ <main>
+  <section id="menu" class="menu">
+   <div class="intro"><div class="eyebrow"><span></span> Á þínum hraða</div><h1>Lítil skref.<br><span>Stórir sigrar.</span></h1><p>Veldu leik og æfðu þig með músinni.</p><svg class="intro-spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M49 6v24M49 70v24M5 50h25M69 50h25M18 17l17 17M65 65l17 17M18 83l17-17M65 35l17-17" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+   <div class="cards">
+    <button class="game-card star-card" data-game="stars"><span class="card-tag">FÆRA MÚSINA</span><span class="card-art" id="star-art" aria-hidden="true"></span><span class="card-title">Stjörnurnar</span><span class="card-copy">Kveiktu á stjörnunum.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+    <button class="game-card balloon-card" data-game="balloons"><span class="card-tag">SMELLA</span><span class="card-art" id="balloon-art" aria-hidden="true"></span><span class="card-title">Blöðrurnar</span><span class="card-copy">Popp! Ein í einu.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+    <button class="game-card rabbit-card" data-game="feeding"><span class="card-tag">DRAGA OG SLEPPA</span><span class="card-art" id="rabbit-art" aria-hidden="true"></span><span class="card-title">Dýravinir</span><span class="card-copy">Gefðu kanínunni að borða.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+   </div>
+   <div class="reassurance"><span><span aria-hidden="true">∞</span> Nægur tími</span><span><span aria-hidden="true">♡</span> Prófum aftur og aftur</span><span><span aria-hidden="true">☀</span> Eitt skref í einu</span></div>
+  </section>
+  <section id="game" class="game" hidden>
+   <div class="game-toolbar"><button class="utility" id="back">⌂ Allir leikir</button><span class="game-name" id="game-name"></span><button class="utility" id="demo-button">Sýna mér</button></div>
+   <div class="instructions"><div><span class="eyebrow" id="skill-label"></span><h1 id="instruction"></h1></div><div class="progress-wrap"><span id="progress-label">0 af 5</span><div id="progress" class="progress" aria-hidden="true"></div></div></div>
+   <div class="playfield" id="playfield" aria-label="Leiksvæði"></div>
+   <div class="game-bottom"><span id="game-hint"></span><button class="text-button" id="restart">Byrja aftur</button></div>
+  </section>
+ </main>
+ <footer><span>Músaleikir</span><span>Smá æfing. Meira öryggi.</span></footer>
+ <dialog id="settings-dialog" aria-labelledby="settings-title"><form id="settings-form"><div class="dialog-heading"><div><span class="eyebrow">FYRIR KENNARA OG AÐSTOÐ</span><h2 id="settings-title">Hvert lítið skref telur.</h2></div><button type="button" class="close" data-close="settings-dialog" aria-label="Loka stillingum">×</button></div><p>Aðlagaðu leikina að nemandanum.</p><label for="difficulty">Erfiðleikastig</label><select id="difficulty"><option value="1">1 · Fyrstu skref — mjög stórir hlutir</option><option value="2">2 · Meiri æfing — stórir hlutir</option><option value="3">3 · Næsta skref — meiri nákvæmni</option></select><label for="rounds">Verkefni í hverri lotu</label><select id="rounds"><option value="5">5 verkefni</option><option value="10">10 verkefni</option></select><label class="check-label"><input type="checkbox" id="sound-setting"> Spila róleg umbunarhljóð</label><p class="settings-note">Engin tímamörk eða stigatap. Hljóð er valfrjálst. Stillingarnar vistast í þessum vafra. Breyttar leikstillingar hefja lotuna aftur.</p><button class="primary" type="submit">Vista stillingar</button></form></dialog>
+ <dialog id="demo-dialog" aria-labelledby="demo-title"><div class="dialog-heading"><span class="eyebrow">SJÁÐU HVERNIG</span><button class="close" data-close="demo-dialog" aria-label="Loka sýnikennslu">×</button></div><h2 id="demo-title"></h2><div class="demo-stage" id="demo-stage" aria-hidden="true"></div><p id="demo-text"></p><button class="primary" id="demo-done">Ég vil prófa</button></dialog>
+ <dialog id="win-dialog" aria-labelledby="win-title"><div class="win-art" aria-hidden="true">✦</div><span class="eyebrow">LOTA KLÁRUÐ</span><h2 id="win-title">Vel gert!</h2><p id="win-text"></p><div class="win-buttons"><button class="primary" id="again">Spila aftur</button><button class="utility" id="win-home">Velja annan leik</button></div></dialog>
+ <div id="announcement" role="status" aria-live="polite" class="sr-only"></div>
+</body>
+</html>
