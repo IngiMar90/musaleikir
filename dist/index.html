@@ -7,7 +7,10 @@
   <meta name="description" content="Einfaldir músarleikir á íslensku. Æfðu að færa músina, smella og draga á þínum hraða.">
   <title>Músaleikir · Leikum og lærum</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./advanced.css">
+  <script src="./geometry.js" defer></script>
   <script src="./app.js" defer></script>
+  <script src="./advanced.js" defer></script>
 </head>
 <body>
  <header class="topbar">
@@ -17,10 +20,18 @@
  <main>
   <section id="menu" class="menu">
    <div class="intro"><div class="eyebrow"><span></span> Á þínum hraða</div><h1>Lítil skref.<br><span>Stórir sigrar.</span></h1><p>Veldu leik og æfðu þig með músinni.</p><svg class="intro-spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M49 6v24M49 70v24M5 50h25M69 50h25M18 17l17 17M65 65l17 17M18 83l17-17M65 35l17-17" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+   <h2 class="section-title">Fyrstu skref <span>Færa, smella og draga</span></h2>
    <div class="cards">
     <button class="game-card star-card" data-game="stars"><span class="card-tag">FÆRA MÚSINA</span><span class="card-art" id="star-art" aria-hidden="true"></span><span class="card-title">Stjörnurnar</span><span class="card-copy">Kveiktu á stjörnunum.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
     <button class="game-card balloon-card" data-game="balloons"><span class="card-tag">SMELLA</span><span class="card-art" id="balloon-art" aria-hidden="true"></span><span class="card-title">Blöðrurnar</span><span class="card-copy">Popp! Ein í einu.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
     <button class="game-card rabbit-card" data-game="feeding"><span class="card-tag">DRAGA OG SLEPPA</span><span class="card-art" id="rabbit-art" aria-hidden="true"></span><span class="card-title">Dýravinir</span><span class="card-copy">Gefðu kanínunni að borða.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+   </div>
+   <h2 class="section-title next-title">Næsta áskorun <span>Meiri nákvæmni og lengri aðgerðir</span></h2>
+   <div class="cards advanced-cards">
+    <button class="game-card tower-card" data-game="tower"><span class="card-tag">STAFLA OG MIÐA</span><span class="card-art" id="tower-art" aria-hidden="true"></span><span class="card-title">Turninn</span><span class="card-copy">Byggðu turn, kubb fyrir kubb.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+    <button class="game-card shapes-card" data-game="shapes"><span class="card-tag">VELJA OG STAÐSETJA</span><span class="card-art" id="shapes-art" aria-hidden="true"></span><span class="card-title">Formasmiðjan</span><span class="card-copy">Finndu rétta formið og láttu það passa.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+    <button class="game-card path-card" data-game="path"><span class="card-tag">HALDA INNI OG STÝRA</span><span class="card-art" id="path-art" aria-hidden="true"></span><span class="card-title">Slóðin</span><span class="card-copy">Fylgdu veginum alla leið heim.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
+    <button class="game-card firefly-card" data-game="fireflies"><span class="card-tag">SMELLA Á HREYFINGU</span><span class="card-art" id="firefly-art" aria-hidden="true"></span><span class="card-title">Eldflugurnar</span><span class="card-copy">Náðu ljósinu á flugi.</span><span class="card-play">Spila <span aria-hidden="true">▷</span></span></button>
    </div>
    <div class="reassurance"><span><span aria-hidden="true">∞</span> Nægur tími</span><span><span aria-hidden="true">♡</span> Prófum aftur og aftur</span><span><span aria-hidden="true">☀</span> Eitt skref í einu</span></div>
   </section>
